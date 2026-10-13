@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyber T-Rex Runner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="stars-bg"></div>
+  <div class="game-wrapper">
+    <!-- Header / Scoreboard -->
+    <header class="game-header">
+      <div class="logo-area">
+        <span class="badge">RETRO ARCADE</span>
+        <h1>CYBER DINO <span>RUNNER</span></h1>
+      </div>
+      <div class="scoreboard">
+        <div class="score-card">
+          <span class="label">HI-SCORE</span>
+          <span id="high-score" class="value">00000</span>
+        </div>
+        <div class="score-card active">
+          <span class="label">SCORE</span>
+          <span id="current-score" class="value">00000</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Canvas Container -->
+    <div class="canvas-container" id="canvas-container">
+      <canvas id="gameCanvas" width="900" height="320"></canvas>
+      
+      <!-- Overlay for Start / Game Over -->
+      <div id="game-overlay" class="game-overlay">
+        <div class="overlay-content">
+          <div class="trophy-icon" id="overlay-icon">🦖</div>
+          <h2 id="overlay-title">PRESS SPACE TO START</h2>
+          <p id="overlay-subtitle">Jump over cacti and dodge pterodactyls to survive!</p>
+          <div class="controls-hint">
+            <span class="key-cap">Space</span> or <span class="key-cap">▲</span> Jump
+            <span class="key-divider">•</span>
+            <span class="key-cap">▼</span> Duck
+            <span class="key-divider">•</span>
+            <span class="key-cap">Tap</span> on Mobile
+          </div>
+          <button id="start-btn" class="glow-button">PLAY NOW</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Touch Controls (Mobile Friendly) -->
+    <div class="mobile-controls">
+      <button id="btn-duck" class="touch-btn" aria-label="Duck">
+        <span>▼</span> DUCK
+      </button>
+      <button id="btn-jump" class="touch-btn jump-btn" aria-label="Jump">
+        <span>▲</span> JUMP
+      </button>
+    </div>
+
+    <!-- Feature Footer -->
+    <footer class="game-footer">
+      <div class="stat-pill">
+        <span class="dot"></span> Speed: <span id="speed-indicator">1.0x</span>
+      </div>
+      <div class="stat-pill">
+        <span class="dot green"></span> Day / Night Cycle Active
+      </div>
+      <div class="stat-pill audio-toggle" id="audio-toggle" role="button" tabindex="0">
+        🔊 Sound: <span id="sound-state">ON</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
